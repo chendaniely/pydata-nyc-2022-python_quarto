@@ -1,0 +1,49 @@
+---
+title: "Install Python. Quarto Render All the Things"
+subtitle: "PyData NYC 2022"
+format: revealjs
+editor: visual
+---
+
+# Install Python
+
+## Pyenv
+
+## Pipenv
+
+## (Ana)conda
+
+# Quarto Notebook
+
+## Quarto vs Jupyter
+
+# Data Science Example
+
+## Load-Clean-Viz-Model
+
+## Render
+
+## Publish
+
+- https://quartopub.com/
+
+# Other formats
+
+## What can you do?
+
+- https://quarto.org/docs/guide/
+
+## Websites
+
+## Books
+
+## Learn more
+
+- Look up "Tom Mock"
+- https://rstudio-conf-2022.github.io/get-started-quarto/
+
+## Github!
+
+# Thanks
+
+- https://github.com/chendaniely/pydata-nyc-2022-python_quarto
