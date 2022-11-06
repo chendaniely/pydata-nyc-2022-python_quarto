@@ -5,33 +5,81 @@ format: revealjs
 editor: visual
 ---
 
+# Hello
+
+## Daniel Chen
+
 # Install Python
 
 ## Pyenv
 
+-   PyCon 2022
+
+-   Calvin Hendryx-Parker
+
+-   Bootstrapping Your Local Python Environment
+
+-   https://www.youtube.com/watch?v
+    =-YEUFGFHWgQ
+
 ## Pipenv
+
+-   Hitchhiker's Guide to Python
+-   https://docs.python-guide.org/dev/virtualenvs/
+-   Real Python: https://realpython.com/pipenv-guide/
 
 ## (Ana)conda
 
 # Quarto Notebook
 
+## Knowledge Assumptions
+
+- You know some Python
+- You know a little bit of Markdown
+- You have worked with notebooks before
+
 ## Quarto vs Jupyter
 
-# Data Science Example
+::: columns
+::: {.column width="40%"}
+Jupyter Notebook
+:::
+
+::: {.column width="60%"}
+Quarto Document
+:::
+:::
+
+## What I don't like about Notebooks
+
+-   Joel Grus JupyterCono 2018
+-   https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/edit#slide=id.g362da58057_0\_1
 
 ## Load-Clean-Viz-Model
+
+::: columns
+::: {.column width="40%"}
+**Jupyter Notebook**
+
+:::
+
+::: {.column width="60%"}
+**Quarto Document**
+
+:::
+:::
 
 ## Render
 
 ## Publish
 
-- https://quartopub.com/
+-   https://quartopub.com/
 
 # Other formats
 
 ## What can you do?
 
-- https://quarto.org/docs/guide/
+-   https://quarto.org/docs/guide/
 
 ## Websites
 
@@ -39,11 +87,11 @@ editor: visual
 
 ## Learn more
 
-- Look up "Tom Mock"
-- https://rstudio-conf-2022.github.io/get-started-quarto/
+-   Look up "Tom Mock"
+-   https://rstudio-conf-2022.github.io/get-started-quarto/
 
 ## Github!
 
 # Thanks
 
-- https://github.com/chendaniely/pydata-nyc-2022-python_quarto
+-   https://github.com/chendaniely/pydata-nyc-2022-python_quarto
