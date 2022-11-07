@@ -1,0 +1,46 @@
+---
+format: html
+---
+
+# Load
+
+```{python}
+from palmerpenguins import load_penguins
+
+penguins = load_penguins()
+```
+
+# EDA
+
+```{python}
+import pandas as pd
+
+penguins.head()
+penguins["sex_01"] = penguins.sex.replace({"male": 1, "female":0})
+penguins.describe()
+```
+
+
+# Plot
+
+```{python}
+from plotnine import ggplot, aes, geom_boxplot
+
+g = (
+    ggplot(data=penguins, mapping=aes(x="sex", y="body_mass_g", color="species"))
+    + geom_boxplot()
+)
+g
+```
+
+
+# Model
+
+
+```{python}
+import statsmodels.formula.api as smf
+
+pen_no_na = penguins.dropna()
+log_reg = smf.logit("sex_01 ~ body_mass_g", data=pen_no_na).fit()
+log_reg.summary()
+```

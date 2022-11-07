@@ -7,36 +7,138 @@ editor: visual
 
 # Hello
 
-## Daniel Chen
+<!-- inicio font awesome -->
+
+```{=html}
+<script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
+```
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> <!-- final font awesome -->
+
+
+## Munsee Lenape
+
+![](img/munsee_lenape.png)
+
+## Daniel Chen {.center}
+
+:::::: columns
+::: {.column width="40%"}
+<center>
+
+<a href='mailto:chendaniely@gmail.com'><i class="far fa-envelope"></i></a>
+<a href='https://twitter.com/chendaniely'><i class="fab fa-twitter"></i>
+<a href='https://mastodon.social/@chendaniely'><i class="fab fa-mastodon"></i>
+<a href='https://github.com/chendaniely'><i class="fab fa-github"></i></a>
+@chendaniely
+
+<img src="img/foto.jpeg" alt="Daniel Chen" style="border-radius: 50%; max-width: 70%;"/>
+
+</center>
+:::
+
+::: {.column width="60%"}
+- Postdoctoral Research and Teaching Fellow, UBC, MDS-Vancouver
+
+- Data Science Educator, Posit, PBC ([Posit Academy](https://posit.co/products/enterprise/academy/))
+
+- [The Carpentries](https://carpentries.org/)
+
+- Author, [Pandas for Everyone](https://www.pearson.com/us/higher-education/program/Chen-Pandas-for-Everyone-Python-Data-Analysis/PGM335102.html)
+:::
+::::::
 
 # Install Python
 
-## Pyenv
+##
 
--   PyCon 2022
+```
+<center>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">(shivers) Happy Halloween, everybody🖤🧡🕷️🕸️ <a href="https://t.co/jSYW5l7QJw">pic.twitter.com/jSYW5l7QJw</a></p>&mdash; Allison Horst (@allison_horst) <a href="https://twitter.com/allison_horst/status/1587123384126562305?ref_src=twsrc%5Etfw">October 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+</center>
+```
 
--   Calvin Hendryx-Parker
+## Installing Python is Easy!
 
--   Bootstrapping Your Local Python Environment
+::: columns
+::: {.column width="50%"}
+But...
 
--   https://www.youtube.com/watch?v
-    =-YEUFGFHWgQ
+- System vs Installed
+- Python Versions
+    - Updating
+    - Multiple versions
+:::
 
-## Pipenv
+::: {.column width="50%"}
+![](https://imgs.xkcd.com/comics/python_environment.png)
+:::
+:::
+
+## Installing Python Packages is Easy!
+
+
+::: columns
+::: {.column width="50%"}
+`pip install pandas`
+
+But...
+
+- Where?
+- Installing "everything"
+- Dependency + Version management
+    - Virtual environments
+:::
+
+::: {.column width="50%"}
+![](https://imgs.xkcd.com/comics/python_environment.png)
+:::
+:::
+
+## Python: (Ana)conda
+
+![](img/logo-anaconda.png)
+
+## Python: Pyenv
+
+![](img/pycon2022-calvin-bootstrap_python.png)
+
+[Calvin Hendryx-Parker - Bootstrapping Your Local Python Environment](https://www.youtube.com/watch?v=-YEUFGFHWgQ)
+
+
+## Packages: built-in `venv`
+
+[PEP 405: Python Virtual Environments](https://peps.python.org/pep-0405/)
+
+- Barebones
+- Comes with Python (standard library)
+- Recommended as of Python 3.5+
+
+## Packages: `pyenv-virtualenv` plugin
+
+- Uses `venv`
+- Quality of life improvements over plain venv
+
+- Only downside: Does not have Windows support
+
+## Packages: Pipenv
 
 -   Hitchhiker's Guide to Python
 -   https://docs.python-guide.org/dev/virtualenvs/
 -   Real Python: https://realpython.com/pipenv-guide/
 
-## (Ana)conda
+## Packages: `conda`
 
-# Quarto Notebook
+# Quarto
 
 ## Knowledge Assumptions
 
-- You know some Python
-- You know a little bit of Markdown
-- You have worked with notebooks before
+-   You know some Python
+-   You know a little bit of Markdown
+-   You have worked with notebooks before
+
+## What is Quarto? {.center}
+
+![](img/website-quarto-homepage.png)
 
 ## Quarto vs Jupyter
 
@@ -52,24 +154,68 @@ Quarto Document
 
 ## What I don't like about Notebooks
 
--   Joel Grus JupyterCono 2018
+-   Joel Grus JupyterCon 2018
 -   https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/edit#slide=id.g362da58057_0\_1
+
+## What I do like about Notebooks
+
+- Jeremy Howard "I like notebooks"
+
+## 
+
+```shell
+Starting python3 kernel...Traceback (most recent call last):
+  File "/opt/quarto/share/jupyter/jupyter.py", line 21, in <module>
+    from notebook import notebook_execute, RestartKernel
+  File "/opt/quarto/share/jupyter/notebook.py", line 16, in <module>
+    import nbformat
+ModuleNotFoundError: No module named 'nbformat'
+Python 3 installation:
+  Version: 3.10.8
+  Path: /usr/bin/python3
+  Jupyter: (None)
+
+Jupyter is not available in this Python installation.
+Install with python3 -m pip install jupyter
+```
+
+
 
 ## Load-Clean-Viz-Model
 
 ::: columns
 ::: {.column width="40%"}
 **Jupyter Notebook**
-
 :::
 
 ::: {.column width="60%"}
 **Quarto Document**
-
 :::
 :::
 
 ## Render
+
+# Common Issues
+
+## Missing dependencies
+
+```shell
+$ quarto preview talk.qmd 
+
+Starting python3 kernel...Traceback (most recent call last):
+  File "/opt/quarto/share/jupyter/jupyter.py", line 21, in <module>
+    from notebook import notebook_execute, RestartKernel
+  File "/opt/quarto/share/jupyter/notebook.py", line 16, in <module>
+    import nbformat
+ModuleNotFoundError: No module named 'nbformat'
+Python 3 installation:
+  Version: 3.10.8
+  Path: /usr/bin/python3
+  Jupyter: (None)
+
+Jupyter is not available in this Python installation.
+Install with python3 -m pip install jupyter
+```
 
 ## Publish
 
@@ -87,8 +233,12 @@ Quarto Document
 
 ## Learn more
 
--   Look up "Tom Mock"
--   https://rstudio-conf-2022.github.io/get-started-quarto/
+- Tom Mock: "Getting Started with Quarto" workshop materials
+    - https://rstudio-conf-2022.github.io/get-started-quarto/
+- Allison Hill: The Happiest Notebooks on Earth
+    - https://www.apreshill.com/talk/2022-happiest-nb/
+- Gordon Shotwell: An overview of Quarto, and Jupyter
+    - https://www.youtube.com/watch?v=Qdq62tslDA8
 
 ## Github!
 
