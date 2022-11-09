@@ -552,16 +552,9 @@ jupyter: python3
 - [https://quarto.org/docs/guide/](https://quarto.org/docs/guide/)
 :::
 
-<!--
 ## Share: Github
 
-Repo:
-
-- `.nojekyll`
-- `_quarto.yml`
-
-In Github:
--->
+![](img/website-gh-actions.png)
 
 ## Share: Quartopub
 

@@ -1,8 +1,0 @@
-- source: talk.qmd
-  quarto-pub:
-    - id: 873999cf-ad94-48eb-bf3f-65190f27ee18
-      url: 'https://quartopub.com/sites/chendaniely/install-python-quarto-render-all-the-things'
-- source: index.qmd
-  quarto-pub:
-    - id: 8c174036-3ec0-4808-88a9-4a5974b1194e
-      url: 'https://quartopub.com/sites/chendaniely/install-python-quarto-render-all-the-things-5642'
