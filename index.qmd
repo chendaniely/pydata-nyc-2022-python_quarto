@@ -119,12 +119,16 @@ book example
 ::: columns
 ::: {.column width="50%"}
 Joel Grus JupyterCon 2018
+["I don't like notebooks"](https://www.youtube.com/watch?v=7jiPeIFXb6U)
+
+![](img/talk-i_dont_like_notebooks.png)
 :::
 
 ::: {.column width="50%"}
-Jeremy Howard "I like notebooks"
+Jeremy Howard
+["I like notebooks"](https://www.youtube.com/watch?v=9Q6sLbz37gk)
 
-What I do like about Notebooks
+![](img/talk-i_like_notebooks.png)
 :::
 :::
 
@@ -458,6 +462,10 @@ Install with python3 -m pip install jupyter
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">(shivers) Happy Halloween, everybody🖤🧡🕷️🕸️ <a href="https://t.co/jSYW5l7QJw">pic.twitter.com/jSYW5l7QJw</a></p>&mdash; Allison Horst (@allison_horst) <a href="https://twitter.com/allison_horst/status/1587123384126562305?ref_src=twsrc%5Etfw">October 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 </center>
 
+###
+
+![](https://imgs.xkcd.com/comics/python_environment.png)
+
 ## Python Setup
 
 ::: columns
@@ -525,7 +533,7 @@ jupyter: python3
 
 `python -m ipykernel install --user --name myenv --display-name "Python (myenv)"`
 
-# Other formats
+# All the Things!
 
 ## What can you do: Gallery
 
@@ -544,12 +552,24 @@ jupyter: python3
 - [https://quarto.org/docs/guide/](https://quarto.org/docs/guide/)
 :::
 
+<!--
 ## Share: Github
+
+Repo:
+
+- `.nojekyll`
+- `_quarto.yml`
+
+In Github:
+-->
 
 ## Share: Quartopub
 
 -   https://quartopub.com/
-- `quarto publish quarto-pub talk.qmd`
+- `quarto publish quarto-pub index.qmd`
+
+![](img/website-quartopub.png){fig-align="center"}
+
 
 ## Learn more
 
