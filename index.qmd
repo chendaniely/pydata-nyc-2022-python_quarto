@@ -429,6 +429,102 @@ app = App(app_ui, server)
 - Shinylive Quarto extension post: [https://quarto.org/docs/blog/posts/2022-10-25-shinylive-extension/](https://quarto.org/docs/blog/posts/2022-10-25-shinylive-extension/)
 :::
 
+## Plots make people go WOO
+
+```{shinylive-python}
+#| standalone: true
+#| viewerHeight: 420
+
+from shiny import App, render, ui
+import numpy as np
+import matplotlib.pyplot as plt
+app_ui = ui.page_fluid(
+    ui.layout_sidebar(
+        ui.panel_sidebar(
+            ui.input_slider("period", "Period", 0.5, 2, 1, step=0.5),
+            ui.input_slider("amplitude", "Amplitude", 0, 2, 1, step=0.25),
+            ui.input_slider("shift", "Phase shift", 0, 2, 0, step=0.1),
+        ),
+        ui.panel_main(
+            ui.output_plot("plot"),
+        ),
+    ),
+)
+def server(input, output, session):
+    @output
+    @render.plot(alt="Sine function")
+    def plot():
+        t = np.arange(0.0, 4.0, 0.01)
+        s = input.amplitude() * np.sin(
+            (2 * np.pi / input.period()) * (t - input.shift() / 2)
+        )
+        fig, ax = plt.subplots()
+        ax.set_ylim([-2, 2])
+        ax.plot(t, s)
+        ax.grid()
+app = App(app_ui, server)
+```
+
+## Maps?
+
+```{shinylive-python}
+#| standalone: true
+#| viewerHeight: 420
+
+from htmltools import css
+from shiny import App, reactive, render, ui
+from shinywidgets import output_widget, reactive_read, register_widget
+
+import ipyleaflet as L
+
+app_ui = ui.page_fluid(
+    ui.div(
+        ui.input_slider("zoom", "Map zoom level", value=12, min=1, max=18),
+        ui.output_ui("map_bounds"),
+        style=css(
+            display="flex", justify_content="center", align_items="center", gap="2rem"
+        ),
+    ),
+    output_widget("map"),
+)
+
+
+def server(input, output, session):
+    # Initialize and display when the session starts (1)
+    map = L.Map(center=(40.758896, -73.985130), zoom=12, scroll_wheel_zoom=True)
+    # Add a distance scale
+    map.add_control(L.leaflet.ScaleControl(position="bottomleft"))
+    register_widget("map", map)
+
+    # When the slider changes, update the map's zoom attribute (2)
+    @reactive.Effect
+    def _():
+        map.zoom = input.zoom()
+
+    # When zooming directly on the map, update the slider's value (2 and 3)
+    @reactive.Effect
+    def _():
+        ui.update_slider("zoom", value=reactive_read(map, "zoom"))
+
+    # Everytime the map's bounds change, update the output message (3)
+    @output
+    @render.ui
+    def map_bounds():
+        center = reactive_read(map, "center")
+        if len(center) == 0:
+            return
+
+        lat = round(center[0], 4)
+        lon = (center[1] + 180) % 360 - 180
+        lon = round(lon, 4)
+
+        return ui.p(f"Latitude: {lat}", ui.br(), f"Longitude: {lon}")
+
+
+app = App(app_ui, server)
+
+```
+
 ## Shiny for Python! {.smaller}
 
 ::: columns
@@ -453,6 +549,9 @@ Winston Chang
 ![](img/website-shiny_python.png){fig-align="center"}
 
 :::
+:::
+
+::: footer
 :::
 
 
@@ -496,8 +595,6 @@ Install with python3 -m pip install jupyter
 
 
 ###
-
-
 
 ## Python Setup
 
