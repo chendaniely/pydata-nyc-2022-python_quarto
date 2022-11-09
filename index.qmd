@@ -54,10 +54,6 @@ div.footnote {
 :::
 ::::::
 
-## {.center}
-
-<img src="img/ad-dozens.gif">
-
 # Quarto
 
 ## What is Quarto? {.center}
@@ -166,6 +162,14 @@ Jeremy Howard
 ## Quarto ➡️ Jupyter
 
 ![](img/qmd-how-it-works.png)
+
+## fast.ai
+
+![](img/fast-ai.webp)
+
+::: {.footnote}
+- [https://www.fast.ai/posts/2022-07-28-nbdev2.html](https://www.fast.ai/posts/2022-07-28-nbdev2.html)
+:::
 
 # Let's do an analysis
 
