@@ -1,18 +1,27 @@
 ---
 title: "Install Python. Quarto Render All the Things"
 subtitle: "PyData NYC 2022"
-format: revealjs
-editor: visual
+author: Daniel Chen
+format:
+  revealjs: 
+    theme: simple
+    footer: "[Daniel Chen](https://daniel.rbind.io/). @chendaniely. Using [Quarto](https://quarto.org/docs/presentations/revealjs/index.html). Slides: [https://github.com/chendaniely/pydata-nyc-2022-python_quarto](https://github.com/chendaniely/pydata-nyc-2022-python_quarto)"
+    slide-number: c/t
+    show-slide-number: all
+    hash-type: number
+jupyter: python3
+
+filters:
+  - shinylive
 ---
 
-# Hello
+# Hello 👋
 
-<!-- inicio font awesome -->
-
-```{=html}
-<script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
-```
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> <!-- final font awesome -->
+<style>
+div.footnote {
+  font-size: 10px;
+}
+</style>
 
 
 ## Munsee Lenape
@@ -22,9 +31,8 @@ editor: visual
 ## Daniel Chen {.center}
 
 :::::: columns
-::: {.column width="40%"}
+::: {.column width="35%"}
 <center>
-
 <a href='mailto:chendaniely@gmail.com'><i class="far fa-envelope"></i></a>
 <a href='https://twitter.com/chendaniely'><i class="fab fa-twitter"></i>
 <a href='https://mastodon.social/@chendaniely'><i class="fab fa-mastodon"></i>
@@ -32,11 +40,10 @@ editor: visual
 @chendaniely
 
 <img src="img/foto.jpeg" alt="Daniel Chen" style="border-radius: 50%; max-width: 70%;"/>
-
 </center>
 :::
 
-::: {.column width="60%"}
+::: {.column width="65%"}
 - Postdoctoral Research and Teaching Fellow, UBC, MDS-Vancouver
 
 - Data Science Educator, Posit, PBC ([Posit Academy](https://posit.co/products/enterprise/academy/))
@@ -47,157 +54,385 @@ editor: visual
 :::
 ::::::
 
-# Install Python
-
-##
-
-```
-<center>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">(shivers) Happy Halloween, everybody🖤🧡🕷️🕸️ <a href="https://t.co/jSYW5l7QJw">pic.twitter.com/jSYW5l7QJw</a></p>&mdash; Allison Horst (@allison_horst) <a href="https://twitter.com/allison_horst/status/1587123384126562305?ref_src=twsrc%5Etfw">October 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-</center>
-```
-
-## Installing Python is Easy!
-
-::: columns
-::: {.column width="50%"}
-But...
-
-- System vs Installed
-- Python Versions
-    - Updating
-    - Multiple versions
-:::
-
-::: {.column width="50%"}
-![](https://imgs.xkcd.com/comics/python_environment.png)
-:::
-:::
-
-## Installing Python Packages is Easy!
-
-
-::: columns
-::: {.column width="50%"}
-`pip install pandas`
-
-But...
-
-- Where?
-- Installing "everything"
-- Dependency + Version management
-    - Virtual environments
-:::
-
-::: {.column width="50%"}
-![](https://imgs.xkcd.com/comics/python_environment.png)
-:::
-:::
-
-## Python: (Ana)conda
-
-![](img/logo-anaconda.png)
-
-## Python: Pyenv
-
-![](img/pycon2022-calvin-bootstrap_python.png)
-
-[Calvin Hendryx-Parker - Bootstrapping Your Local Python Environment](https://www.youtube.com/watch?v=-YEUFGFHWgQ)
-
-
-## Packages: built-in `venv`
-
-[PEP 405: Python Virtual Environments](https://peps.python.org/pep-0405/)
-
-- Barebones
-- Comes with Python (standard library)
-- Recommended as of Python 3.5+
-
-## Packages: `pyenv-virtualenv` plugin
-
-- Uses `venv`
-- Quality of life improvements over plain venv
-
-- Only downside: Does not have Windows support
-
-## Packages: Pipenv
-
--   Hitchhiker's Guide to Python
--   https://docs.python-guide.org/dev/virtualenvs/
--   Real Python: https://realpython.com/pipenv-guide/
-
-## Packages: `conda`
-
 # Quarto
-
-## Knowledge Assumptions
-
--   You know some Python
--   You know a little bit of Markdown
--   You have worked with notebooks before
 
 ## What is Quarto? {.center}
 
-![](img/website-quarto-homepage.png)
+![](img/website-quarto-homepage.png){fig-align="center"}
+
+## Who Would Use Quarto?
+
+::: columns
+::: {.column width="50%"}
+
+- Data Scientist
+  - Jupyter Notebooks
+    - Analysis
+    - Reports + Documentation
+
+- Academic
+  - Papers
+:::
+
+::: {.column width="50%"}
+- Technical Writer
+  - Blog
+  - Website
+  - Presentation
+  - Book
+
+:::
+:::
+
+:::{.footnote}
+- Quarto Gallery: [https://quarto.org/docs/gallery/](https://quarto.org/docs/gallery/)
+- Quarto Guide: [https://quarto.org/docs/guide/](https://quarto.org/docs/guide/)
+- Quarto Reference: [https://quarto.org/docs/reference/](https://quarto.org/docs/reference/)
+:::
+
+<!--
+website examples:
+
+- https://nbdev.fast.ai/
+- https://crsl4.github.io/julia-workshop/
+- https://datasciencebox.org/
+- https://nasa-openscapes.github.io/
+
+presentation example
+- https://apreshill.github.io/palmerpenguins-useR-2022/#/title-slide
+
+book example
+
+- https://wesmckinney.com/book/
+-->
+
+## {.center}
+
+![](img/allison_hill-websites_quote.png){fig-align="center"}
+
+## Doesn't Jupyter do that? {.center}
+
+**Ju**lia + **Pyt**hon + **R**
+
+## Let's talk about Jupyter Notebooks...
+
+::: columns
+::: {.column width="50%"}
+Joel Grus JupyterCon 2018
+:::
+
+::: {.column width="50%"}
+Jeremy Howard "I like notebooks"
+
+What I do like about Notebooks
+:::
+:::
+
+## Daniel's List {.smaller}
+
+- Technical Writing
+  - ✅ Literate programming
+  - ❌ Editing JSON
+- Data Science
+  - More an output format than a source document
+  - ✅ Great for posting code+output (e.g. a workshop)
+  - ❌ Not great for source control collaborative document
+- Teaching
+  - ✅ `nbgrader` for course assignment creation + grading
+  - ✅ Restart Kernel > Run All
 
 ## Quarto vs Jupyter
 
 ::: columns
-::: {.column width="40%"}
-Jupyter Notebook
+
+::: {.column width="50%"}
+![](img/notebook-quarto.png)
 :::
 
-::: {.column width="60%"}
-Quarto Document
+::: {.column width="50%"}
+![](img/notebook-jupyter.png)
 :::
+
 :::
 
-## What I don't like about Notebooks
+## Quarto ➡️ Jupyter
 
--   Joel Grus JupyterCon 2018
--   https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/edit#slide=id.g362da58057_0\_1
+![](img/qmd-how-it-works.png)
 
-## What I do like about Notebooks
+# Let's do an analysis
 
-- Jeremy Howard "I like notebooks"
+## _Load_ - EDA - Plot - Model {.smaller}
 
-## 
+```{python}
+#| echo: true
+#| eval: true
 
-```shell
-Starting python3 kernel...Traceback (most recent call last):
-  File "/opt/quarto/share/jupyter/jupyter.py", line 21, in <module>
-    from notebook import notebook_execute, RestartKernel
-  File "/opt/quarto/share/jupyter/notebook.py", line 16, in <module>
-    import nbformat
-ModuleNotFoundError: No module named 'nbformat'
-Python 3 installation:
-  Version: 3.10.8
-  Path: /usr/bin/python3
-  Jupyter: (None)
+from palmerpenguins import load_penguins
 
-Jupyter is not available in this Python installation.
-Install with python3 -m pip install jupyter
+penguins = load_penguins()
+penguins.head()
 ```
 
+## Load - _EDA_ - Plot - Model {.smaller}
+
+```{python}
+#| echo: true
+#| eval: true
+
+import pandas as pd
+
+penguins.describe()
+```
+
+## Load - EDA - _Plot_ - Model {.smaller}
+
+```{python}
+#| echo: true
+#| eval: true
+
+from plotnine import ggplot, aes, geom_boxplot, theme_xkcd
+
+(
+  ggplot(
+    data=penguins,
+    mapping=aes(x="sex", y="body_mass_g", color="species")
+  )
+  + geom_boxplot()
+  + theme_xkcd()
+)
+
+```
+
+## Load - EDA - Plot - _Model_ {.smaller}
+
+```{python}
+#| echo: true
+#| eval: true
+
+import statsmodels.formula.api as smf
+
+penguins["sex_01"] = penguins.sex.replace({"male": 1, "female":0})
+pen_no_na = penguins.dropna()
+
+log_reg = smf.logit("sex_01 ~ body_mass_g", data=pen_no_na).fit()
+log_reg.params
+```
+
+## Model Ops {background-image="img/ml_ops_cycle.png"}
 
 
-## Load-Clean-Viz-Model
+<img src="img/isabel.png" width="175" height="175" style="border-radius: 50%"/>
+
+<center>
+Isabel Zimmerman<br />
+Holistic MLOps for<br />Better Science
+</center>
+
+::: footer
+:::
+
+# Let's go make things
+
+## Create `.qmd` or `.ipynb`
 
 ::: columns
-::: {.column width="40%"}
-**Jupyter Notebook**
+
+::: {.column width="50%"}
+![](img/notebook-quarto.png)
 :::
 
-::: {.column width="60%"}
-**Quarto Document**
+::: {.column width="50%"}
+![](img/notebook-jupyter.png)
+:::
+
+:::
+
+## The YAML header
+
+::: columns
+
+::: {.column width="50%"}
+```yaml
+---
+format: html
+---
+
+```
+:::
+
+::: {.column width="50%"}
+```yaml
+---
+format: html
+title: Quarto Document
+subtitle: Data Science!
+author: Daniel Chen
+toc: true
+toc-deph: 3
+code-overflow: scroll
+code-line-numbers: true
+execute: 
+  echo: true
+keep-md: true
+keep-ipynb: true
+jupyter: python3
+---
+```
+
+::: {.footnote}
+- HTML Reference: [https://quarto.org/docs/reference/formats/html.html](https://quarto.org/docs/reference/formats/html.html)
 :::
 :::
 
-## Render
+:::
 
-# Common Issues
 
-## Missing dependencies
+## The `.qmd` code chunk {.smaller}
+
+``````
+```{{python}}
+#| echo: true
+#| eval: true
+
+from palmerpenguins import load_penguins
+
+penguins = load_penguins()
+penguins.head()
+```
+``````
+
+- Markdown
+- Engine: `{python}`, `{r}`, etc
+  - Knitr for `{r}`
+  - Jupyter for any other block `{python}`, `{julia}`, etc
+- Chunk options: `#| `
+- Code
+
+## Make the document!
+
+```shell
+% quarto render examples/01-quarto.qmd
+
+Executing '01-quarto.ipynb'
+  Cell 1/4...Done
+  Cell 2/4...Done
+  Cell 3/4...Done
+  Cell 4/4...Done
+
+pandoc 
+  to: html
+  output-file: 01-quarto.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: Quarto Document
+  subtitle: Data Science!
+  author: Daniel Chen
+  toc-deph: 3
+  jupyter: python3
+  
+Output created: 01-quarto.html
+
+```
+
+## Works on your existing Jupyter notebook
+
+```shell
+% quarto render examples/02-jupyter.ipynb --execute
+
+Starting python3 kernel...Done
+
+Executing '02-jupyter.ipynb'
+  Cell 1/5...Done
+  Cell 2/5...Done
+  Cell 3/5...Done
+  Cell 4/5...Done
+  Cell 5/5...Done
+
+pandoc 
+  to: html
+  output-file: 02-jupyter.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  
+Output created: 02-jupyter.html
+
+```
+## Profit!
+
+![](img/quarto-render.png){fig-align="center"}
+
+<!--
+## Profit More!
+
+This is a Shinylive application embedded in a Quarto doc.
+
+```{shinylive-python}
+#| standalone: true
+
+from shiny import *
+
+app_ui = ui.page_fluid(
+    ui.input_slider("n", "N", 0, 100, 40),
+    ui.output_text_verbatim("txt"),
+)
+
+def server(input, output, session):
+    @output
+    @render.text
+    def txt():
+        return f"The value of n*2 is {input.n() * 2}"
+
+app = App(app_ui, server)
+
+```
+
+- Shinylive Quarto extension repo: [https://github.com/quarto-ext/shinylive](https://github.com/quarto-ext/shinylive)
+- Shinylive Quarto extension post: [https://quarto.org/docs/blog/posts/2022-10-25-shinylive-extension/](https://quarto.org/docs/blog/posts/2022-10-25-shinylive-extension/)
+-->
+
+## Profit more! {.smaller .center}
+
+Shiny for Python: Interactive apps and dashboards made easy-ish
+
+::: columns
+
+::: {.column width="50%"}
+<img src="img/joe.jpg" width="175" height="175" style="border-radius: 50%"/>
+
+Joe Cheng
+
+:::
+
+::: {.column width="50%"}
+<img src="img/winston.jpg" width="175" height="175" style="border-radius: 50%"/>
+
+Winston Chang
+:::
+:::
+
+
+# Python...
+
+## Common error
 
 ```shell
 $ quarto preview talk.qmd 
@@ -217,31 +452,123 @@ Jupyter is not available in this Python installation.
 Install with python3 -m pip install jupyter
 ```
 
-## Publish
+##
 
--   https://quartopub.com/
+<center>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">(shivers) Happy Halloween, everybody🖤🧡🕷️🕸️ <a href="https://t.co/jSYW5l7QJw">pic.twitter.com/jSYW5l7QJw</a></p>&mdash; Allison Horst (@allison_horst) <a href="https://twitter.com/allison_horst/status/1587123384126562305?ref_src=twsrc%5Etfw">October 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+</center>
+
+## Python Setup
+
+::: columns
+
+::: {.column width="50%"}
+Pyenv
+
+![](img/pycon2022-calvin-bootstrap_python.png)
+
+[Calvin Hendryx-Parker - Bootstrapping Your Local Python Environment](https://www.youtube.com/watch?v=-YEUFGFHWgQ)
+:::
+
+::: {.column width="50%"}
+Anaconda
+
+![](img/logo-anaconda.png){fig-align="center"}
+:::
+
+:::
+
+## Virtual Environments
+
+- Built-in Python 3.5+ `venv`
+- `pyenv-virtualenv` plugin
+- `pipenv`
+- `conda`
+
+::: columns
+::: {.column width="50%"}
+### Posit Academy
+
+- Pyenv + pipenv
+
+::: {.footnote}
+- Posit/Rstudio Minimum viable python: [https://solutions.rstudio.com/python/minimum-viable-python/](https://solutions.rstudio.com/python/minimum-viable-python/)
+:::
+
+:::
+
+::: {.column width="50%"}
+### UBC-MDS
+
+- Anaconda based [installation guide](https://ubc-mds.github.io/resources_pages/installation_instructions/)
+:::
+:::
+
+## Finding the binaries
+
+- Make sure you are in the correct environment
+  - `which python`
+  - `pyenv versions`
+- Check your Jupyter settings in Quarto
+  - `quarto check`
+- In VSCode
+  - Python: Select Interpreter
+
+## The Jupyter kernel
+
+- In your YAML:
+```yaml
+jupyter: python3
+```
+
+- You do not need to "register" the kernel in your env
+
+`python -m ipykernel install --user --name myenv --display-name "Python (myenv)"`
 
 # Other formats
 
-## What can you do?
+## What can you do: Gallery
 
--   https://quarto.org/docs/guide/
+![](img/website-quarto-gallery.png){fig-align="center"}
 
-## Websites
+:::{.footnote}
+[https://quarto.org/docs/gallery/](https://quarto.org/docs/gallery/)
+:::
 
-## Books
+## How can you do: Get Started + Guide
+
+![](img/website-quarto-get_started.png){fig-align="center"}
+
+:::{.footnote}
+- [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/)
+- [https://quarto.org/docs/guide/](https://quarto.org/docs/guide/)
+:::
+
+## Share: Github
+
+## Share: Quartopub
+
+-   https://quartopub.com/
+- `quarto publish quarto-pub talk.qmd`
 
 ## Learn more
 
-- Tom Mock: "Getting Started with Quarto" workshop materials
-    - https://rstudio-conf-2022.github.io/get-started-quarto/
-- Allison Hill: The Happiest Notebooks on Earth
-    - https://www.apreshill.com/talk/2022-happiest-nb/
-- Gordon Shotwell: An overview of Quarto, and Jupyter
-    - https://www.youtube.com/watch?v=Qdq62tslDA8
+- Tom Mock: [Getting Started with Quarto workshop](https://rstudio-conf-2022.github.io/get-started-quarto/)
+- Allison Hill: [The Happiest Notebooks on Earth](https://www.apreshill.com/talk/2022-happiest-nb/)
+- Gordon Shotwell: [An overview of Quarto, and Jupyter](https://www.youtube.com/watch?v=Qdq62tslDA8)
+- Mine Çetinkaya-Rundel & Julia Stewart Lowndes: [Hello Quarto: Share, Collaborate, Teach, Reimagine](https://www.youtube.com/watch?v=p7Hxu4coDl8)
 
-## Github!
+## Try Quarto! {.smaller}
 
-# Thanks
+1. [https://quarto.org/](https://quarto.org/)
+2. Get Started (aka install)
+3. Guides (Pick a project)
+4. Website: `quarto create-project mysite --type website`
+5. `quarto preview mysite`
+6. Profit?
 
--   https://github.com/chendaniely/pydata-nyc-2022-python_quarto
+<!-- inicio font awesome -->
+```{=html}
+<script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
+```
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> <!-- final font awesome -->

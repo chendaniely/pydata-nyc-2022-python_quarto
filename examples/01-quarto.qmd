@@ -1,13 +1,29 @@
 ---
 format: html
+title: Quarto Document
+subtitle: Data Science!
+author: Daniel Chen
+toc: true
+toc-deph: 3
+code-overflow: scroll
+code-line-numbers: true
+execute: 
+  echo: true
+keep-md: true
+keep-ipynb: true
+jupyter: python3
 ---
 
 # Load
 
 ```{python}
+#| echo: true
+#| eval: true
+
 from palmerpenguins import load_penguins
 
 penguins = load_penguins()
+penguins.head()
 ```
 
 # EDA
@@ -15,8 +31,6 @@ penguins = load_penguins()
 ```{python}
 import pandas as pd
 
-penguins.head()
-penguins["sex_01"] = penguins.sex.replace({"male": 1, "female":0})
 penguins.describe()
 ```
 
@@ -24,13 +38,16 @@ penguins.describe()
 # Plot
 
 ```{python}
-from plotnine import ggplot, aes, geom_boxplot
+from plotnine import ggplot, aes, geom_boxplot, theme_xkcd
 
-g = (
-    ggplot(data=penguins, mapping=aes(x="sex", y="body_mass_g", color="species"))
-    + geom_boxplot()
+(
+  ggplot(
+    data=penguins,
+    mapping=aes(x="sex", y="body_mass_g", color="species")
+  )
+  + geom_boxplot()
+  + theme_xkcd()
 )
-g
 ```
 
 
@@ -40,7 +57,9 @@ g
 ```{python}
 import statsmodels.formula.api as smf
 
+penguins["sex_01"] = penguins.sex.replace({"male": 1, "female":0})
 pen_no_na = penguins.dropna()
+
 log_reg = smf.logit("sex_01 ~ body_mass_g", data=pen_no_na).fit()
 log_reg.summary()
 ```
