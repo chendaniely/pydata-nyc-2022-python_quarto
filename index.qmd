@@ -54,6 +54,10 @@ div.footnote {
 :::
 ::::::
 
+## Python + R
+
+<iframe src="https://giphy.com/embed/kSlJtVrqxDYKk" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kSlJtVrqxDYKk"></a></p>
+
 # Quarto
 
 ## What is Quarto? {.center}
@@ -105,6 +109,10 @@ book example
 
 - https://wesmckinney.com/book/
 -->
+
+##
+
+![](img/data_science_figure.png){fig-align="center"}
 
 ## {.center}
 
@@ -416,8 +424,10 @@ app = App(app_ui, server)
 
 ```
 
+::: {.footnote}
 - Shinylive Quarto extension repo: [https://github.com/quarto-ext/shinylive](https://github.com/quarto-ext/shinylive)
 - Shinylive Quarto extension post: [https://quarto.org/docs/blog/posts/2022-10-25-shinylive-extension/](https://quarto.org/docs/blog/posts/2022-10-25-shinylive-extension/)
+:::
 
 ## Shiny for Python! {.smaller}
 
@@ -470,13 +480,24 @@ Install with python3 -m pip install jupyter
 
 ##
 
+::: columns
+
+::: {.column width="50%"}
 <center>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">(shivers) Happy Halloween, everybody🖤🧡🕷️🕸️ <a href="https://t.co/jSYW5l7QJw">pic.twitter.com/jSYW5l7QJw</a></p>&mdash; Allison Horst (@allison_horst) <a href="https://twitter.com/allison_horst/status/1587123384126562305?ref_src=twsrc%5Etfw">October 31, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 </center>
+:::
+
+::: {.column width="50%"}
+![](https://imgs.xkcd.com/comics/python_environment.png)
+:::
+
+:::
+
 
 ###
 
-![](https://imgs.xkcd.com/comics/python_environment.png)
+
 
 ## Python Setup
 
@@ -566,11 +587,18 @@ jupyter: python3
 
 ## Share: Github
 
-![](img/website-gh-actions.png)
+- Build from a branch
+- `index.qmd` 
+
+![](img/website-gh-actions.png){fig-align="center"}
+
+::: {.footnote}
+- Isabel's slides repo + auto build: [https://github.com/isabelizimm/pydata-nyc2022](https://github.com/isabelizimm/pydata-nyc2022)
+:::
 
 ## Share: Quartopub
 
--   https://quartopub.com/
+- [https://quartopub.com/](https://quartopub.com/)
 - `quarto publish quarto-pub index.qmd`
 
 ![](img/website-quartopub.png){fig-align="center"}
