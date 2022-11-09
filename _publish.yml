@@ -1,0 +1,4 @@
+- source: index.qmd
+  quarto-pub:
+    - id: 74b2e738-3de1-4f9c-acc2-c4b3349e72d3
+      url: 'https://quartopub.com/sites/chendaniely/install-python-quarto-render-all-the-things-df57'
