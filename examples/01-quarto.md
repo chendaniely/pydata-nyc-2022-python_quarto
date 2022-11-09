@@ -24,7 +24,7 @@ penguins = load_penguins()
 penguins.head()
 ```
 
-::: {.cell-output .cell-output-display execution_count=9}
+::: {.cell-output .cell-output-display execution_count=1}
 
 ```{=html}
 <div>
@@ -129,7 +129,7 @@ import pandas as pd
 penguins.describe()
 ```
 
-::: {.cell-output .cell-output-display execution_count=10}
+::: {.cell-output .cell-output-display execution_count=2}
 
 ```{=html}
 <div>
@@ -257,9 +257,9 @@ from plotnine import ggplot, aes, geom_boxplot, theme_xkcd
 ![](01-quarto_files/figure-html/cell-4-output-2.png){}
 :::
 
-::: {.cell-output .cell-output-display execution_count=11}
+::: {.cell-output .cell-output-display execution_count=3}
 ```
-<ggplot: (273032717)>
+<ggplot: (395165166)>
 ```
 :::
 :::
@@ -286,7 +286,7 @@ Optimization terminated successfully.
 ```
 :::
 
-::: {.cell-output .cell-output-display execution_count=12}
+::: {.cell-output .cell-output-display execution_count=4}
 
 ```{=html}
 <table class="simpletable">
@@ -301,10 +301,10 @@ Optimization terminated successfully.
   <th>Method:</th>                 <td>MLE</td>       <th>  Df Model:          </th>  <td>     1</td>  
 </tr>
 <tr>
-  <th>Date:</th>            <td>Tue, 08 Nov 2022</td> <th>  Pseudo R-squ.:     </th>  <td>0.1407</td>  
+  <th>Date:</th>            <td>Wed, 09 Nov 2022</td> <th>  Pseudo R-squ.:     </th>  <td>0.1407</td>  
 </tr>
 <tr>
-  <th>Time:</th>                <td>23:06:02</td>     <th>  Log-Likelihood:    </th> <td> -198.32</td> 
+  <th>Time:</th>                <td>09:21:37</td>     <th>  Log-Likelihood:    </th> <td> -198.32</td> 
 </tr>
 <tr>
   <th>converged:</th>             <td>True</td>       <th>  LL-Null:           </th> <td> -230.80</td> 

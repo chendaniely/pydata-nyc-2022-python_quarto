@@ -1,5 +1,7 @@
 .DS_Store
 index_files/
+examples/01-quarto_files/
+examples/02-jupyter_files/
 
 *html
 talk_files/
@@ -134,3 +136,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .Rproj.user
+
+/.quarto/

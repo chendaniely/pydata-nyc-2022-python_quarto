@@ -54,6 +54,10 @@ div.footnote {
 :::
 ::::::
 
+## {.center}
+
+<img src="img/ad-dozens.gif">
+
 # Quarto
 
 ## What is Quarto? {.center}
@@ -384,8 +388,7 @@ Output created: 02-jupyter.html
 
 ![](img/quarto-render.png){fig-align="center"}
 
-<!--
-## Profit More!
+## Profit More! {.smaller}
 
 This is a Shinylive application embedded in a Quarto doc.
 
@@ -411,25 +414,30 @@ app = App(app_ui, server)
 
 - Shinylive Quarto extension repo: [https://github.com/quarto-ext/shinylive](https://github.com/quarto-ext/shinylive)
 - Shinylive Quarto extension post: [https://quarto.org/docs/blog/posts/2022-10-25-shinylive-extension/](https://quarto.org/docs/blog/posts/2022-10-25-shinylive-extension/)
--->
 
-## Profit more! {.smaller .center}
-
-Shiny for Python: Interactive apps and dashboards made easy-ish
+## Shiny for Python! {.smaller}
 
 ::: columns
 
 ::: {.column width="50%"}
+"Interactive apps and dashboards made easy-ish"
+
+<center>
 <img src="img/joe.jpg" width="175" height="175" style="border-radius: 50%"/>
 
 Joe Cheng
 
-:::
-
-::: {.column width="50%"}
 <img src="img/winston.jpg" width="175" height="175" style="border-radius: 50%"/>
 
 Winston Chang
+</center>
+
+:::
+
+::: {.column width="50%"}
+
+![](img/website-shiny_python.png){fig-align="center"}
+
 :::
 :::
 
